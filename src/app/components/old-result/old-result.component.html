@@ -1,0 +1,57 @@
+<div class="full-wrap" style="height: calc(100% - 105px);" bis_skin_checked="1">
+   <!-- Center Column -->
+   <div class="over-wrap" bis_skin_checked="1">
+      <h2>Check Result</h2>
+      <div class="function-wrap" bis_skin_checked="1">
+         <ul class="input-list">
+            <li><label>Period</label></li>
+            <li>
+               <input style="width:150px;padding:6px !important" id="betsstartDate" class="cal-input" type="datetime-local" placeholder="YYYY-MM-DD">
+               to
+               <input style="width:150px;padding:6px !important" id="betsendDate" class="cal-input" type="datetime-local" placeholder="YYYY-MM-DD">
+            </li>
+            <!-- <li><a class="btn-send" onclick="filter()">Apply</a></li>
+               <li><a class="btn">Clear</a></li> -->
+            <li><a class="btn-send" onclick="resultList(4)">Cricket</a></li>
+            <li><a class="btn-send" onclick="resultList(1)">Soccer</a></li>
+            <li><a class="btn-send" onclick="resultList(2)">Tennis</a></li>
+            <li><a class="btn-send" href="/Acheckvt10result">Virtual T10</a></li>
+         </ul>
+      </div>
+      <div class="total_all banking-top" bis_skin_checked="1">
+         <ul class="input-list">
+            <!--  <li><a class="btn-send" onclick="resultList(4)">Cricket</a></li>
+               <li><a class="btn-send" onclick="resultList(1)">Soccer</a></li>
+               <li><a class="btn-send" onclick="resultList(2)">Tennis</a></li>
+               <li><a class="btn-send" href="/Acheckvt10result">Virtual T10</a></li> -->
+         </ul>
+         <div class="search-wrap" style="float: right;" bis_skin_checked="1">
+            <div bis_skin_checked="1">
+               <input id="searchMatches" class="search-input" type="text" placeholder="Search..." readonly="readonly">
+            </div>
+         </div>
+      </div>
+      <!-- No Report Message -->
+      <table id="matchTable" class="table-s" style="display: table; margin-bottom: 2%;">
+         <thead>
+            <tr>
+               <th width="4%" class="align-L blk">S.No.</th>
+               <th width="4%" class="align-L blk">Sport</th>
+               <th width="5%" class="align-L blk">Match Date</th>
+               <th width="10%" class="align-L blk">Match Name</th>
+               <th width="5%" class="align-L blk">Winner</th>
+            </tr>
+         </thead>
+         <tbody id="oldResult" class="auto-index">
+            <tr>
+               <td class="align-L"></td>
+               <td class="align-L">Cricket</td>
+               <td class="align-L">2025-06-26 17:58:27</td>
+               <td class="align-L">Sri Lanka v Bangladesh - (34440606)</td>
+               <td class="align-L">Sri Lanka</td>
+            </tr>
+         </tbody>
+      </table>
+      <!-- function end-->
+   </div>
+</div>

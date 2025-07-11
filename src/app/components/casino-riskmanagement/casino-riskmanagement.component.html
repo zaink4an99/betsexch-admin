@@ -1,0 +1,48 @@
+<div class="full-wrap" style="height: calc(100% - 105px)">
+   <h2>Casino Risk Management</h2>
+   <div class="total_all banking-top">
+      <div class="search-wrap" id="userSearchUl">
+         <div>
+            <input class="search-input" type="text" name="searchUserId" id="userId" placeholder="Enter userId..." readonly="readonly">
+            <input class="search-input" type="number" name="amount" id="amt" placeholder="Enter Amount">   
+         </div>
+      </div>
+      <ul class="input-list" id="companySearchUl">
+         <li class="bank-li" onclick="getList()">
+            <a class="btn-send banking-btn" id="searchKey">Search</a>
+         </li>
+         <li class="bank-li" onclick="exportReportToExcel()">                    
+            <a class="btn-send" style="background:teal;color:#fff;float: right;">Export Excel</a>
+         </li>
+      </ul>
+   </div>
+   <div class="topDiv">
+      <table id="table_transfer" class="table-s">
+         <tbody>
+            <tr>
+               <th class="align-L">S No.</th>
+               <th class="align-L">UserId</th>
+               <th class="align-L">UserName</th>
+               <th class="align-L">SourceId</th>
+               <th class="align-L">Time</th>
+               <th class="align-L">Game Code</th>
+               <th class="align-L">Game Name</th>
+               <th class="align-L">Market Name</th>
+               <th class="align-L">Transaction Id</th>
+               <th class="align-L">Stake</th>
+               <th class="align-L">PL</th>
+            </tr>
+         </tbody>
+      </table>
+      <div class="report_over-wrap" style="max-height: calc(100% - 208px)">
+         <table id="table_transfer" class="table-s">
+            <tbody id="userData">
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div id="paginationList">
+      <ul id="pageNumberContent" class="pages">
+      </ul>
+   </div>
+</div>

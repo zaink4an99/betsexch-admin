@@ -1,0 +1,224 @@
+ 
+<div id="mainWrap" class="main_wrap">
+   <!-- marquee start  -->
+   <div class="marquee-box container" style="display: flex; border-radius: 5px;">
+      <h4><i class="" aria-hidden="true"></i>
+         News
+      </h4>
+      <div class="marquee">
+         <div class="js-marquee-wrapper">
+            <div class="js-marquee" style="margin-right: 0px; float: left;width:100%">
+               <marquee width="100%" direction="left">
+                  <span id="news_data" style="display: -webkit-inline-box;">--</span>
+               </marquee>
+            </div>
+         </div>
+      </div>
+   </div>
+    
+   <div class="total_all">
+      <div class="search-wrap" id="userSearchUl">
+         <div>
+            <input class="search-input" type="text" name="userId" id="userId" placeholder="Find member..." readonly="readonly">
+            <button class="search-but" id="searchKey">Search</button>
+         </div>
+      </div>
+      <ul class="input-list" id="accountStatusUl">
+         <li><strong>Status</strong></li>
+         <li>
+            <select class="" name="accountStatus" id="accountStatus">
+               <option value="0">ACTIVE
+               </option>
+               <option value="1">SUSPENDED
+               </option>
+               <option value="2">LOCKED
+               </option>
+               <option value="3">ALL</option>
+            </select>
+         </li>
+      </ul>
+      <div class="agent_path">
+         <ul id="agentPath" class="agent_path-L" style="display: block;">
+            <li id="patha" class="" style="display:none">
+               <a id="adminLink">
+               <span class="lv_0">
+               A
+               </span>
+               <strong id="adminUser"></strong>
+               </a>
+            </li>
+            <li id="pathsua" class="currency_tag" style="display:none">
+               <a id="suaLink">
+               <span class="lv_1">SUA</span>
+               <strong id="suaUser"> </strong>
+               </a>
+            </li>
+            <li id="pathsab" class="" style="display:none">
+               <a id="sabLink">
+               <span class="lv_3">
+               SAB
+               </span>
+               <strong id="sabUser"></strong>
+               </a>
+            </li>
+            <li id="pathsup" class="" style="display:none">
+               <a id="supLink">
+               <span class="lv_4">
+               SUP
+               </span>
+               <strong id="supUser"></strong>
+               </a>
+            </li>
+            <li id="pathsa" class="" style="display:none">
+               <a id="saLink">
+               <span class="lv_2">
+               SA
+               </span>
+               <strong id="saUser"> </strong>
+               </a>
+            </li>
+            <li id="pathc" class="last_li" style="display:none">
+               <a id="userLink">
+               <span class="lv_3">
+               A
+               </span>
+               <strong id="cUser"> </strong>
+               </a>
+            </li>
+            <ul class="account_pop" id="accountPop">
+               <li id="popTmp" style="display: none;">
+                  <a href="">
+                  <span class="lv_4">
+                  PL
+                  </span>
+                  </a>
+               </li>
+            </ul>
+         </ul>
+      </div>
+      <a id="refresh" class="btn_replay"><img src="/assets/images/transparent.gif"></a>
+      <a class="add_member"><img src="/assets/images/transparent.gif"><span id="createButton">Add Super Admin</span> </a>
+   </div>
+   <div id="totalBox" class="total_box">
+      <dl id="creditLimitDL" class="total_dl" style="display: none">
+         <dt>Credit Limit</dt>
+         <dd id="myCreditLimit">IR 500.00</dd>
+      </dl>
+      <dl id="creditGivenOutDL" class="total_dl" style="display: none">
+         <dt>Total Credit Given Out</dt>
+         <dd id="totalCreditGivenOut">IR 417.29</dd>
+      </dl>
+      <dl id="creditAvailBalDL" class="total_dl" style="display: none">
+         <dt>Credit Avail Bal</dt>
+         <dd id="myCreditAvailBal">IR 82.71</dd>
+      </dl>
+      <dl id="totalBalanceDL" class="total_dl">
+         <dt>Total Balance</dt>
+         <dd id="totalBalance">PBU 109,521.74</dd>
+      </dl>
+      <dl id="totalExposureDL" class="total_dl">
+         <dt>Total Exposure</dt>
+         <dd id="">PBU  <span id="totalExposure" style="color: red;">2,123.81</span></dd>
+      </dl>
+      <dl id="myCurrentPLDL" class="total_dl" style="display: none">
+         <dt>Today P/L with Upline
+         </dt>
+         <dd id="myCurrentPL">IR 0.00</dd>
+      </dl>
+      <dl id="availableBalanceDL" class="total_dl">
+         <dt>Total Avail. bal.</dt>
+         <dd id="totalAvailBal">PBU 107,397.93</dd>
+      </dl>
+      <dl id="masterBalanceDL" class="total_dl">
+         <dt>Balance</dt>
+         <dd id="mastersBalance">PBU 198,762.00</dd>
+      </dl>
+      <dl id="masterAvailableBalanceDL" class="total_dl">
+         <dt>Available Balance</dt>
+         <dd id="mastersAvailBal">PBU 306,159.93</dd>
+      </dl>
+      <dl id="transferablePLWithUplineDL" class="total_dl">
+         <dt>Total Player Balance
+         </dt>
+         <dd id="totalpBal">PBU 37,790.88</dd>
+      </dl>
+   </div>
+   <div id="widthAll" class="width-all">
+      <table id="resultTable" class="table01 margin-table" style="display: table;">
+         <thead>
+            <tr>
+               <th id="accountTh" width="" class="align-L">Account</th>
+               <th id="creditRefTh" width="10%">Credit Ref.</th>
+               <th id="creditLimitTh" width="10%" style="display: none">Credit Limit</th>
+               <th id="currentPLTh" width="10%" style="display: none">Current P/L
+               </th>
+               <th id="transferablePLTh" width="10%" style="display: none">Transferable P/L
+               </th>
+               <th id="balanceTh" width="10%">Balance</th>
+               <th id="exposureTh" width="10%">Exposure</th>
+               <th id="availableBalanceTh" width="10%">Avail. bal.</th>
+               <th id="creditPLTh" width="10%" style="display: none">Balance</th>
+               <th id="exposureLimitTh" width="10%" style="display: none;">Exposure Limit</th>
+               <th id="usrWeb" width="10%">Website Name</th>
+               <th id="playerBalanceTh" width="10%">Player Balance</th>
+               <th id="refPLTh" width="10%">Ref. P/L</th>
+               <th id="statusTh" width="10%">Status</th>
+               <th id="actionTh" width="15%">Action</th>
+            </tr>
+         </thead>
+         <tbody id="userData">
+            <tr id="satest" style="display: table-row;" main_userid="satest">
+               <td id="accountCol" class="align-L"><a id="account0" class="ico_account"><span class="lv_4">SUA</span>satest</a></td>
+               <td id="creditRef1" class="credit-amount-member"><a id="creditRefBtn" class="favor-set" href="#">100.00</a></td>
+               <td id="balance1"><a href="#" class="link-open">109,521.74</a></td>
+               <td id="currentExposure1" style="color:red"><span style="cursor:pointer;width:67px;text-align:center;display:inline-block;" class="status-suspend">2,123.81</span></td>
+               <td id="available1">107,397.93</td>
+               <td id="exposureLimit1" style="display:none;">0.00</td>
+               <td id="exposureLimit1" style="display: table-cell;">wonderbets.in</td>
+               <td id="available1" style="display:table-cell;">37,790.88</td>
+               <td id="refPL1">109,421.74</td>
+               <td id="statusCol"><span id="status1" class="status-active"><img src="/assets/images/transparent.gif">Active</span> </td>
+               <td id="actionCol">
+                  <ul class="action">
+                     <li> <a id="p_l1" class="p_l" href="/AprofitAndLoss/satest">Betting Profit &amp; Loss</a></li>
+                     <li> <a id="betting_history1" href="/ABettingHistory/satest" class="betting_history">Betting History</a></li>
+                     <li><a id="change1" class="status">Change Status</a></li>
+                     <li><a id="profile1" class="profile" href="/Amemberactsmry/satest">Profile</a></li>
+                     <li><a class="bank">Block</a></li>
+                  </ul>
+               </td>
+            </tr>
+            
+         </tbody>
+      </table>
+   </div>
+</div>
+<div id="paginationList">
+   <ul id="pageNumberContent" class="pages">
+      <li id="prev"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Prev</a></li>
+      <li id="pageNumber"><a href="javascript:void(0);" class="select" style="pointer-events: none;">1</a></li>
+      <li id="next"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Next</a></li>
+      <input type="text" id="goToPageNumber_1" maxlength="6" size="4"><a id="goPageBtn_1">GO</a>
+   </ul>
+</div>
+<div class="footer_info">
+   <div class="main_wrap">
+      <ul class="action">
+         <li class="bank">
+            <p>Block Market</p>
+         </li>
+         <li class="p_l">
+            <p>Betting Profit &amp; Loss</p>
+         </li>
+         <li class="betting_history">
+            <p>Betting History</p>
+         </li>
+         <li class="profile">
+            <p>Profile</p>
+         </li>
+         <li class="status">
+            <p>Change Status</p>
+         </li>
+      </ul>
+   </div>
+</div>

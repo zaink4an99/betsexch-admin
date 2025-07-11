@@ -1,0 +1,121 @@
+<div class="full-wrap" style="height: calc(100% - 105px)" bis_skin_checked="1">
+   <!-- Center Column -->
+   <div class="over-wrap" bis_skin_checked="1">
+      <!-- Loading Wrap -->
+      <h2>Profit Loss</h2>
+      <!-- function -->
+      <div class="function-wrap" bis_skin_checked="1">
+         <!-- <ul class="input-list">
+            <li><a class="btn-send">Match Profit</a></li>
+            <li><a class="btn">Casino Profit</a></li>
+            </ul> -->
+         <ul class="input-list">
+            <li><label>Period</label></li>
+            <li>
+               <input id="betsstartDate" class="cal-input" type="datetime-local" placeholder="YYYY-MM-DD">
+               to
+               <input id="betsendDate" class="cal-input" type="datetime-local" placeholder="YYYY-MM-DD">
+            </li>
+            <li><a class="btn-send" onclick="filter()">Apply</a></li>
+            <li><a class="btn">Clear</a></li>
+         </ul>
+      </div>
+      <div class="total_all banking-top" bis_skin_checked="1">
+         <ul class="input-list">
+            <li><a class="btn-send" onclick="filterSport(4)">Cricket</a></li>
+            <li><a class="btn-send" onclick="filterSport(1)">Soccer</a></li>
+            <li><a class="btn-send" onclick="filterSport(2)">Tennis</a></li>
+         </ul>
+         <div class="search-wrap" style="float:right" bis_skin_checked="1">
+            <div bis_skin_checked="1">
+               <input id="searchMatches" class="search-input" type="text" placeholder="Search..." readonly="readonly">
+            </div>
+         </div>
+      </div>
+      <!-- No Report Message -->
+      <table id="matchTable" class="table-s" style="display: table;margin-bottom:2%">
+         <thead>
+            <tr>
+               <th width="4%" class="align-L blk">S.No.</th>
+               <th width="4%" class="align-L blk">Sport Name</th>
+               <th width="10%" class="align-L blk">Match Name
+               </th>
+               <th width="5%" class="align-L blk">Match Date
+               </th>
+               <th width="5%" class="align-L blk">Pnl+</th>
+               <th width="7%" class="align-L blk">Pnl-</th>
+               <th width="7%" class="align-L blk">Commission
+               </th>
+               <th width="4%" class="align-L blk">Final P&amp;L
+               </th>
+            </tr>
+         </thead>
+         <thead>
+            <tr>
+               <th width="4%" class="align-L"></th>
+               <th width="4%" class="align-L"></th>
+               <th width="10%" class="align-L">Total
+               </th>
+               <th width="5%" class="align-L">
+               </th>
+               <th width="5%" class="align-L red" id="pnlM">-0.26</th>
+               <th width="7%" class="align-L green" id="pnlP">0.00</th>
+               <th width="7%" class="align-L green" id="com">0.00</th>
+               <th width="4%" class="align-L red" id="finalPnl">-0.26</th>
+            </tr>
+         </thead>
+         <tbody id="betlistdiv" class="auto-index">
+            <tr>
+               <td class="align-L"></td>
+               <td class="align-L">Cricket</td>
+               <td class="align-L"><a onclick="getCompletedFancy('34448947')">West Indies v Australia</a></td>
+               <td class="align-L"></td>
+               <td class="align-L">0</td>
+               <td class="align-L green">0.00</td>
+               <td class="align-L green">0.00</td>
+               <td class="align-L green">0.00</td>
+            </tr>
+            <tr>
+               <td class="align-L"></td>
+               <td class="align-L">Cricket</td>
+               <td class="align-L"><a onclick="getCompletedFancy('34440606')">Sri Lanka v Bangladesh</a></td>
+               <td class="align-L">2025-06-25 10:00:00</td>
+               <td class="align-L red">-0.26</td>
+               <td class="align-L">0</td>
+               <td class="align-L">0.00</td>
+               <td class="align-L red">-0.26</td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="table-responsive" id="fancyresultdiv" style="margin-top: 1%;margin-bottom:2%; width: 100%;display:none" bis_skin_checked="1">
+         <table class="table-s" style="margin: 0 !important; background: #fff;">
+            <thead>
+               <tr role="row">
+                  <th class="align-L" rowspan="1" colspan="1">Title</th>
+                  <th class="align-L" rowspan="1" colspan="1">P&amp;L </th>
+                  <th class="align-L" rowspan="1" colspan="1">Com+</th>
+                  <th class="align-L" rowspan="1" colspan="1">	Com-</th>
+                  <th class="align-L" rowspan="1" colspan="1">Won By</th>
+                  <th class="align-L" rowspan="1" colspan="1"> Net P&amp;L </th>
+                  <th class="align-L" rowspan="1" colspan="1">Action</th>
+               </tr>
+            </thead>
+            <thead>
+               <tr role="row">
+                  <th class="align-C">Total</th>
+                  <th id="totalPnl" class="align-L">0.00</th>
+                  <th id="totalComP" class="green align-L">0.00</th>
+                  <th id="totalComN" class="red align-L">0.00</th>
+                  <th></th>
+                  <th id="totalNet" class="align-L">0.00</th>
+                  <th>
+                  </th>
+               </tr>
+            </thead>
+            <tbody id="completedFancy"></tbody>
+         </table>
+      </div>
+      <div bis_skin_checked="1"></div>
+      <!-- function end-->
+   </div>
+</div>

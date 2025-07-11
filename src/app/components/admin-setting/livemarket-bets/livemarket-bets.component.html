@@ -1,0 +1,143 @@
+<div class="main_wrap" style="height: calc(100% - 105px)">
+   <table id="table_log" class="table01">
+      <tbody>
+         <tr>
+            <th class="align-L" style="width:30%">Name</th>
+            <th class="align-L" style="width:23%">Action</th>
+            <th class="align-L" style="width:23%">Status</th>
+            <th class="align-L" style="width:23%">Refresh</th>
+         </tr>
+      </tbody>
+      <tbody id="content">
+         <tr id="tempTr">
+            <td class="align-L" id="processName"></td>
+            <td class="align-L">
+               <a class="btn-send" onclick="unblockDeleteBlock()" style="width:50px;background:red;border-color:red;color:#fff;">STOP</a>
+            </td>
+            <td class="align-L"><span id="processStatus">is Idle</span></td>
+            <td class="align-L">
+               <a class="btn-send" onclick="getDeleteBlock()" style="width:22px;background:red;border-color:red;color:#fff;padding:5px;"><i class="fa fa-refresh fa-spin"></i></a>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <!-- function -->
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-2">
+         <label>Select Sport</label>
+         <select class="form-control purp" id="sportid" onchange="getSport(this)">
+            <option value="-1">Select Sport</option>
+            <option value="-1" selected="">Select Sport</option>
+            <option value="4">Cricket</option>
+            <option value="2">Tennis</option>
+            <option value="1">Soccer</option>
+         </select>
+      </div>
+      <div class="col-lg-2">
+         <label>Select Match</label>
+         <select class="form-control purp" id="matchLoader" onchange="getmatchtype(this)">
+         </select>
+      </div>
+      <div class="col-lg-2" style="">
+         <label>Select Type</label>
+         <select class="form-control purp" id="type" onchange="getmarketByType(this)">
+         </select>
+      </div>
+      <div class="col-lg-2" id="gapSelectDiv" style="">
+         <label>Select Market</label>
+         <select class="form-control purp" id="market">
+         </select>
+      </div>
+      <div class="col-lg-2">
+         <label>Select Bet Type</label>
+         <select class="form-control purp" id="betType">
+            <option value="all">All</option>
+            <option value="back">Back</option>
+            <option value="lay">Lay</option>
+         </select>
+      </div>
+   </div>
+   <div class="total_all banking-top">
+      <ul class="input-list" id="companySearchUl" style="padding:3px">
+         <li>
+            <label>Enter Time Range</label>
+            <br>
+            <input id="startDate" class="cal-input" type="date" placeholder="YYYY-MM-DD">
+            <input id="startTime" class="time-input" type="text" placeholder="09:00" maxlength="15" style="width: 100px;" readonly="readonly">
+            to
+            <input id="endDate" class="cal-input" type="date" placeholder="YYYY-MM-DD">
+            <input id="endTime" class="time-input" type="text" placeholder="08:59" maxlength="15" style="width: 100px;" readonly="readonly">
+         </li>
+         <li>
+            <br>
+            <label>Use Time</label>
+            <input id="useTimeCheck" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+         </li>
+      </ul>
+      <ul class="input-list" style="float:right">
+         <li><a class="btn-send" onclick="deleteFilterBets()" style="background:red;border-color:red;color:#fff" target="_blank" rel="noopener noreferrer">Delete Bets</a></li>
+         <li><a class="btn-send" rel="noopener noreferrer" onclick="showUserBetCount()">Show Bet Count</a></li>
+      </ul>
+   </div>
+   <div class="total_all banking-top">
+      <ul class="input-list" id="companySearchUl" style="padding:3px">
+         <li>
+            <label>Enter Odds</label>
+            <br>
+            <input class="cal-input" id="searchodds" type="number" placeholder="0.95">
+         </li>
+         <li>
+            <br>
+            <label>Use Odds</label>
+            <input id="useOddsCheck" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+         </li>
+         <li>
+            <br>
+            <a class="btn-send" onclick="getAdminLiveBets()" target="_blank" rel="noopener noreferrer">Search</a>
+         </li>
+      </ul>
+   </div>
+   <div class="total_all banking-top">
+      <div class="search-wrap" id="userSearchUl">
+         <div>
+            <input class="search-input" type="text" name="searchUserId" id="searchBets" placeholder="Enter userId..." readonly="readonly">
+         </div>
+      </div>
+      <ul class="input-list" id="companySearchUl" style="padding:3px">
+         <li class="bank-li">
+            <a class="btn-primary banking-btn" onclick="searchUserBet()">Search</a>
+            <a class="btn-primary banking-btn" onclick="clearUserBet()">Clear</a>
+         </li>
+      </ul>
+      <ul class="input-list" style="float:right">
+         <li><a class="btn-send" routerLink="/monitorUserPnL" target="_blank" rel="noopener noreferrer">User P/L</a></li>
+         <li><a class="btn-send" routerLink="/prematchpl" target="_blank" rel="noopener noreferrer">Pre-Match P/L</a></li>
+         <li><a class="btn-send" routerLink="/AdeletedBets" target="_blank" rel="noopener noreferrer">Rejected Bets</a></li>
+      </ul>
+   </div>
+   <div id="widthAll" class="width-all">
+      <table id="resultTable" class="table01 margin-table" style="display: table;">
+         <tbody>
+            <tr>
+               <th id="creditRefTh">Sports</th>
+               <th id="balanceTh">Match Name</th>
+               <th id="exposureTh">Client</th>
+               <th id="exposureTh">Type</th>
+               <th id="actionTh">Selection</th>
+               <th id="actionTh">Odds</th>
+               <th id="actionTh">Stake</th>
+               <th id="actionTh">Place Time</th>
+               <th id="actionTh">IP</th>
+               <th id="actionTh">Pnl</th>
+               <th id="actionTh">Del.</th>
+            </tr>
+         </tbody>
+         <tbody id="liveMatchBets" class="auto-index">
+         </tbody>
+      </table>
+      <div>
+         <ul id="pageNumberContent" class="pages">
+         </ul>
+      </div>
+   </div>
+</div>

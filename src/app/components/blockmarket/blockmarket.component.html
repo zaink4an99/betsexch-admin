@@ -1,0 +1,117 @@
+<div class="full-wrap" bis_skin_checked="1">
+   <!-- Loading Wrap -->
+   <div id="loading" class="loading-wrap" style="display: none;" bis_skin_checked="1">
+      <ul class="loading">
+         <li><img src="/adminfiles/img/loading40.gif"></li>
+         <li>Loading...</li>
+      </ul>
+   </div>
+   <!-- Message -->
+   <div id="message" class="message-wrap success" bis_skin_checked="1">
+      <a class="btn-close">Close</a>
+      <p></p>
+   </div>
+   <h2>Sport Listing
+   </h2>
+   <table id="table_log" class="table01">
+      <tbody>
+         <tr>
+            <th width="15%" class="align-L">S.No.</th>
+            <th width="18%">Betfair ID</th>
+            <th width="18%">Name</th>
+            <th width="18%">Status</th>
+            <th width="16%">Action</th>
+         </tr>
+      </tbody>
+      <tbody id="content">
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">1</td>
+            <td id="deposit">1</td>
+            <td id="withdraw"><span class="red"><a href="/AblockMarketlist/1">Soccer</a></span></td>
+            <td id="balance">Soccer <span id="game1status">is ON</span></td>
+            <td onclick="editGames('1')"><label class="switch">
+               <input type="checkbox" id="game1" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">2</td>
+            <td id="deposit">2</td>
+            <td id="withdraw"><span class="red"><a href="/AblockMarketlist/2">Tennis</a></span></td>
+            <td id="balance">Tennis <span id="game2status">is ON</span></td>
+            <td onclick="editGames('2')"><label class="switch">
+               <input type="checkbox" id="game2" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">3</td>
+            <td id="deposit">4</td>
+            <td id="withdraw"><span class="red"><a href="/AblockMarketlist/4">Cricket</a></span></td>
+            <td id="balance">Cricket  <span id="game4status">is ON</span></td>
+            <td onclick="editGames('4')"><label class="switch">
+               <input type="checkbox" checked="" id="game4">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">4</td>
+            <td id="deposit">8</td>
+            <td id="withdraw"><span class="red"><a href="#">Live Casino</a></span></td>
+            <td id="balance">Live Casino <span id="game8status">is ON</span></td>
+            <td onclick="editGames('8')"><label class="switch">
+               <input type="checkbox" id="game8" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">5</td>
+            <td id="deposit">6</td>
+            <td id="withdraw"><span class="red"><a href="#" onclick="goToGames()">AWC Casino</a></span></td>
+            <td id="balance">AWC Casino<span id="game6status">is ON</span></td>
+            <td onclick="editGames('6')"><label class="switch">
+               <input type="checkbox" id="game6" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="tempTr">
+            <td id="createDate" class="align-L">5</td>
+            <td id="deposit">7</td>
+            <td id="withdraw"><span class="red"><a href="#">Inter. Casino</a></span></td>
+            <td id="balance">Inter. Casino<span id="game7status">is ON</span></td>
+            <td onclick="editGames('7')"><label class="switch">
+               <input type="checkbox" id="game7" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="dwtr" style="">
+            <td id="createDate" class="align-L">5</td>
+            <td id="deposit">101</td>
+            <td id="withdraw"><span class="red"><a href="#">Deposit/Wtihdraw</a></span></td>
+            <td id="balance">Deposit/Wtihdraw <span id="game101status">is ON</span></td>
+            <td onclick="editGames('101')"><label class="switch">
+               <input type="checkbox" id="game101" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+         <tr id="dwtr">
+            <td id="createDate" class="align-L">5</td>
+            <td id="deposit">11</td>
+            <td id="withdraw"><span class="red"><a href="#">SABA</a></span></td>
+            <td id="balance">SABA <span id="game11status">is ON</span></td>
+            <td onclick="editGames('11')"><label class="switch">
+               <input type="checkbox" id="game11" checked="">
+               <span class="slider round"></span>
+               </label>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

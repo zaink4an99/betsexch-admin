@@ -1,0 +1,462 @@
+<div class="full-wrap" style="height: calc(100% - 105px)">
+   <!-- Center Column -->
+   <div class="over-wrap">
+      <!-- Loading Wrap -->
+      <div id="loading" class="loading-wrap" style="display: none;">
+         <ul class="loading">
+            <li><img src="/adminfiles/img/loading40.gif"></li>
+            <li>Loading...</li>
+         </ul>
+      </div>
+      <!-- Message -->
+      <h2>Bet List Live
+      </h2>
+      <div id="limitCondition" class="function-wrap">
+         <ul class="input-list">
+            <li id="eventRadioBtnList">
+               <input type="radio" name="events" id="events_1" data-eventtype="1" value="1">
+               Soccer
+               <!-- <input type="radio" name="events" id="SOCCER_sportsbook" data-eventtype="1" value="true">
+                  S/R Soccer 
+                  <input type="radio" name="events" id="SOCCER_ow" data-eventtype="1" value="true">
+                  S/B Soccer -->
+               <!-- <input type="radio" name="events" id="SOCCER_BOOK" data-eventtype="1" data-categorytype="5">
+                  BOOK Soccer -->
+               <input type="radio" name="events" id="events_2" data-eventtype="2" value="2">
+               Tennis
+               <!--  <input type="radio" name="events" id="TENNIS_sportsbook" data-eventtype="2" value="true">
+                  S/R Tennis
+                  <input type="radio" name="events" id="TENNIS_BOOK" data-eventtype="2" data-categorytype="5">
+                  BOOK Tennis -->
+               <input type="radio" name="events" checked="" id="events_4" data-eventtype="4" value="4">
+               Cricket
+               <input type="radio" name="events" id="CRICKET_fancy" data-eventtype="4" data-categorytype="2" value="Fancy">
+               Cricket/Fancy Bet
+               <input type="radio" name="events" id="CRICKET_fancy" data-eventtype="4" data-categorytype="2" value="Fancy1">
+               Cricket/Fancy1 Bet
+               <!--  <input type="radio" name="events" id="CRICKET_sportsbook" data-eventtype="4"
+                  value="true">
+                  S/R Cricket -->
+               <input type="radio" name="events" id="CRICKET_BOOK" value="Book" data-eventtype="4" data-categorytype="5">
+               BOOK Cricket
+               <input type="radio" name="events" id="TOSS" data-eventtype="9999999" data-categorytype="2" value="TOSS">
+               Toss
+               <input type="radio" name="events" id="IntCasino" data-eventtype="9999999" data-categorytype="2" value="IntCasino">
+               Int. Casino
+               <input type="radio" name="events" id="AwcCasino" data-eventtype="9999999" data-categorytype="2" value="AwcCasino">
+               AWC Casino
+               <input type="radio" name="events" id="virtual" data-eventtype="9999999" data-categorytype="2" value="virtual">
+               Virtual Sports
+               <input type="radio" name="events" id="Premium" value="Premium" data-categorytype="6">Premium Fancy
+               <input type="radio" name="events" id="OtherC" value="OtherC" data-categorytype="6">Other Cricket
+               <input type="radio" name="events" id="OtherS" value="OtherS" data-categorytype="6">Other Soccer
+               <input type="radio" name="events" id="SABA" value="SABA" data-categorytype="6">SABA SPORTS
+            </li>
+         </ul>
+         <ul class="input-list">
+            <li>
+               <label>Order of display:</label>
+               <select name="sortCondition" id="sortCondition">
+                  <option value="stake" selected="">
+                     Stake
+                  </option>
+                  <option value="userid">
+                     Player ID
+                  </option>
+                  <option value="createdOn">
+                     Time
+                  </option>
+               </select>
+               <label> of </label>
+               <select name="orderByClause" id="orderByClause">
+                  <option value="asc" selected="">Ascending</option>
+                  <option value="desc">Descending</option>
+               </select>
+            </li>
+            <li>&nbsp;&nbsp;</li>
+            <li>
+               <label>Last:</label>
+               <select name="limit" id="limit">
+                  <option value="100">100 Txn</option>
+                  <option value="50">50 Txn</option>
+                  <option value="25" selected="">25 Txn</option>
+               </select>
+            </li>
+            <li>&nbsp;&nbsp;</li>
+            <li>
+               <label>Auto Refresh (Seconds)</label>
+               <select name="refreshTime" id="refreshTime">
+                  <option value="stop">Stop</option>
+                  <option value="60">60</option>
+                  <option value="30">30</option>
+                  <option value="15" selected="">15</option>
+                  <option value="5">5</option>
+                  <option value="2">2</option>
+               </select>
+            </li>
+            <li>&nbsp;&nbsp;</li>
+            <li>
+               <label>Bet Status:</label>
+               <select name="betStatus" id="betStatus">
+                  <option value="all">All</option>
+                  <!--   <option value="0">Unmatched</option>
+                     <option value="1">Matched</option> -->
+               </select>
+            </li>
+            <li>&nbsp;&nbsp;</li>
+            <li><a style="width:60px" href="#" class="btn-send" onclick="changeDate('all')" id="betListLiveRefresh">Refresh</a></li>
+         </ul>
+      </div>
+      <table id="unMatchTable" class="table-s" style="display: table;">
+         <caption id="unMatchedTitle" class="betlistlive-top">UnMatched</caption>
+         <tbody>
+            <tr class="no-data">
+               <td>You have no bets in this time period.</td>
+            </tr>
+         </tbody>
+      </table>
+      <!--   <table id="pendingTable" class="table-s" style="display: table;">
+         <caption id="pendingTitle" class="betlistlive-top">Pending</caption>
+         <tbody>
+             <tr class="no-data">
+                 <td>You have no bets in this time period.</td>
+             </tr>
+         </tbody>
+         </table> -->
+      <table id="matchTable" class="table-s" style="display: table;">
+         <caption id="matchedTitle" class="betlistlive-top">Matched</caption>
+         <thead>
+            <tr>
+               <th width="8%" class="align-L">PL ID</th>
+               <th width="5%" class="align-L">Bet ID
+               </th>
+               <th id="betTime" width="6%" class="align-L">Bet placed</th>
+               <th width="7%" class="align-L">IP Address</th>
+               <th width="" class="align-L">Market
+               </th>
+               <th width="7%" class="align-L">Selection
+               </th>
+               <th width="4%" class="align-C">Type
+               </th>
+               <th width="4%">Odds req.
+               </th>
+               <th width="8%">Stake
+               </th>
+               <th width="5%">Liability
+               </th>
+            </tr>
+         </thead>
+         <tbody id="matchedBetsList">
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u3</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1728975832</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Tue Oct 15 12:33:52 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.20</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Pakistan v England</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">England</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">2.14</td>
+               <td id="matchStake">0</td>
+               <td id="liability">0</td>
+            </tr>
+            <tr id="expandMatched1728975832" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">undefined</span></td>
+                           <td id="txOddsReq">2.14</td>
+                           <td id="txStake">0</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">2.14</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u3</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1728975832</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Tue Oct 15 12:33:52 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.20</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>India v New Zealand</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">The Draw</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">1.49</td>
+               <td id="matchStake">0</td>
+               <td id="liability">0</td>
+            </tr>
+            <tr id="expandMatched1728975832" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">undefined</span></td>
+                           <td id="txOddsReq">1.49</td>
+                           <td id="txStake">0</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">1.49</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u1</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1715756079</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Wed May 15 12:24:30 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.10</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Leinster Lightning v Munster Reds</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">Leinster Lightning</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">0.87</td>
+               <td id="matchStake">1</td>
+               <td id="liability">1</td>
+            </tr>
+            <tr id="expandMatched1715756079" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">Wed May 15 12:24:38 IST 2024</span></td>
+                           <td id="txOddsReq">0.87</td>
+                           <td id="txStake">1</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">0.87</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u1</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1715756284</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Wed May 15 12:27:51 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.10</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Leinster Lightning v Munster Reds</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">Leinster Lightning</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">0.87</td>
+               <td id="matchStake">1</td>
+               <td id="liability">1</td>
+            </tr>
+            <tr id="expandMatched1715756284" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">Wed May 15 12:27:57 IST 2024</span></td>
+                           <td id="txOddsReq">0.87</td>
+                           <td id="txStake">1</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">0.87</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u1</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1715756572</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Wed May 15 12:32:45 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.10</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Leinster Lightning v Munster Reds</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">Leinster Lightning</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">0.8</td>
+               <td id="matchStake">1</td>
+               <td id="liability">1</td>
+            </tr>
+            <tr id="expandMatched1715756572" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">Wed May 15 12:32:51 IST 2024</span></td>
+                           <td id="txOddsReq">0.8</td>
+                           <td id="txStake">1</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">0.8</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u1</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1715757723</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Wed May 15 12:51:55 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.10</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Leinster Lightning v Munster Reds</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">Leinster Lightning</td>
+               <td class="align-C"><span id="matchType" class="back">Back</span></td>
+               <td id="matchOddsReq">0.8</td>
+               <td id="matchStake">1</td>
+               <td id="liability">1</td>
+            </tr>
+            <tr id="expandMatched1715757723" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">Wed May 15 12:52:02 IST 2024</span></td>
+                           <td id="txOddsReq">0.8</td>
+                           <td id="txStake">1</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">0.8</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="matchRow0" style="display: table-row;">
+               <td id="playerId" class="align-L">u1</td>
+               <td class="align-L"><a id="betID" href="javascript: void(0);">1715756381</a></td>
+               <td class="align-L"><span id="betPlaced" class="small-date">Wed May 15 12:29:30 IST 2024</span></td>
+               <td id="ip" class="align-L">192.168.1.10</td>
+               <td id="matchTitle" class="align-L">Cricket<img class="fromto" src="/adminfiles/img/transparent.gif"><strong>Leinster Lightning v Munster Reds</strong><img class="fromto" src="/adminfiles/img/transparent.gif">Match odds</td>
+               <td id="matchSelection" class="align-L">Leinster Lightning</td>
+               <td class="align-C"><span id="matchType" class="back">Lay</span></td>
+               <td id="matchOddsReq">0.91</td>
+               <td id="matchStake">2</td>
+               <td id="liability">1.82</td>
+            </tr>
+            <tr id="expandMatched1715756381" style="display:none;" class="expand">
+               <td colspan="2"></td>
+               <td colspan="9">
+                  <img class="expand-arrow" src="/images/transparent.gif">
+                  <table id="txTable0">
+                     <tbody>
+                        <tr>
+                           <th>Bet taken</th>
+                           <th width="16%">Odds req.</th>
+                           <th width="17%">Stake</th>
+                           <th width="24%">Liability</th>
+                           <th width="24%">Odds matched</th>
+                        </tr>
+                        <tr id="txRowTemplate" style="display: none">
+                           <td><span id="betTaken" class="small-date"></span></td>
+                           <td id="txOddsReq"></td>
+                           <td id="txStake"></td>
+                           <td id="txLiability"></td>
+                           <td id="txOddsMatched"></td>
+                        </tr>
+                        <tr id="txRow0" style="display: table-row;" class="even">
+                           <td><span id="betTaken" class="small-date">Wed May 15 12:29:39 IST 2024</span></td>
+                           <td id="txOddsReq">0.91</td>
+                           <td id="txStake">2</td>
+                           <td id="txLiability">-</td>
+                           <td id="txOddsMatched">0.91</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div>
+         <ul id="pageNumberContent" class="pages">
+            <li id="prev"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Prev</a></li>
+            <li id="pageNumber"><a href="javascript:void(0);" class="select" style="pointer-events: none;">1</a></li>
+            <li id="next"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Next</a></li>
+            <input type="text" id="goToPageNumber_1" maxlength="6" size="4"><a id="goPageBtn_1">GO</a>
+         </ul>
+      </div>
+   </div>
+</div>

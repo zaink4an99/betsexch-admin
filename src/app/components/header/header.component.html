@@ -1,0 +1,110 @@
+<div class="top">
+   <div class="header">
+      <h1><a style="display:flex;" id="mainLink" href="">
+         <img id="headLogo" src="https://imagedelivery.net/91xvae4aKE4d2nwBRzFV2g/?v=0.04">
+         </a>
+      </h1>
+      <ul class="account-wrap">
+         <li><span id="loginId">A</span><strong style="color:var(--admintopheadertextcolor)">admin</strong></li>
+         <li class="main-wallet no-multi">
+            <a href="#multi-balance_pop" class="a-wallet">
+               <ul>
+                  <li>
+                     <span>Main</span>
+                     <strong id="mainBalance">PBU 198,762.00</strong>
+                  </li>
+               </ul>
+               <p class="loading-bar" id="menuRefreshLoading" style="display:none;">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </p>
+            </a>
+            <a id="topRefresh" class="a-refresh" style="cursor: pointer"><img src="/assets/images/transparent.gif"></a>
+         </li>
+      </ul>
+   </div>
+   <!-- Menu Wrap -->
+   <div class="menu-wrap">
+      <div class="main_wrap">
+         <ul class="menu" id="menuItems">
+            <li><a id="menu_downline_list" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">Downline List
+               </a>
+            </li>
+            <li>
+               <a id="menu_my_account" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }" routerLink="/Amyaccount">My Account
+               </a>
+            </li>
+            <li>
+               <a id="menu_my_report" class="menu-drop" href="#" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">My Report
+               </a>
+               <ul class="submenudiv">
+                  <li><a class="sbmenu" routerLink="/Aprofitmarket">Profit/Loss Report by Market
+                     </a>
+                  </li>
+                  <li><a class="sbmenu" routerLink="/Adownlinepl">Profit/Loss Downline
+                     </a>
+                  </li>
+                  <li><a class="sbmenu" routerLink="/statementByUser">Match Profit Loss
+                     </a>
+                  </li>
+                  <li><a class="sbmenu" routerLink="/ACasinoprofitAndLossDownlineNew">Casino P/L Downline Monthly
+                     </a>
+                  </li>
+                  <li><a class="sbmenu" routerLink="/ASABAprofitAndLossDownlineNew">SABA P/L Downline Monthly
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li><a id="menu_bet_list" class="" routerLink="/Abetlist" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">BetList
+               </a>
+            </li>
+            <li><a id="menu_bet_list_live" class="" routerLink="/Abetlistlive" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">BetListLive
+               </a>
+            </li>
+            <li>
+               <a id="menu_risk_management" class="menu-drop" href="#" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Risk Management
+               </a>
+               <ul class="submenudiv">
+                  <li><a class="sbmenu" routerLink="/Ariskmanagement">Sports Risk Management
+                     </a>
+                  </li>
+                  <li><a class="sbmenu" routerLink="/ACasRiskMgmt">Casino Risk Management
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li><a id="menu_banking" class="" routerLink="/Abanking" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Banking
+               </a>
+            </li>
+            <li><a id="block_Market" class="" routerLink="/AblockMarket" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Block Market
+               </a>
+            </li>
+            <li><a id="sportSetting" class="" routerLink="/AsportSettings" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Sport Setting
+               </a>
+            </li>
+            <li><a id="adminSetting" class="" routerLink="/AAdminSettings" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Admin Setting
+               </a>
+            </li>
+            <li><a id="adminResult" class="" routerLink="/AsetResult" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Result
+               </a>
+            </li>
+            <li><a id="addMatch" class="" routerLink="/AaddMatch" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Add Match
+               </a>
+            </li>
+            <li><a routerLink="/Achecksportwiseresult" routerLinkActive="select" [routerLinkActiveOptions]="{ exact: true }">Old Res.
+               </a>
+            </li>
+            <li class="logout" onclick="selfLogoutUser()">
+               <a id="logout">Logout<img src="/assets/images/transparent.gif"></a>
+            </li>
+            <li class="time_zone"><span>Time Zone :</span> <span id="loginTimeZone" style="color:var(--adminbottomheadertextcolor);font-weight:bold">GMT+5:30</span></li>
+         </ul>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,439 @@
+<div class="main_wrap">
+   <div class="total_all">
+      <h2>Risk Management Summary
+      </h2>
+      <a class="btn_replay" href="" id="refresh_Top_Racing"><i class="fas fa-redo-alt"></i></a>
+   </div>
+   <div class="play_race-wrap">
+      <div class="function-wrap">
+         <ul class="input-list">
+            <li><a id="cricket" onclick="changeSports(4)" class="btn-send">Cricket</a></li>
+            <li><a id="tennis" onclick="changeSports(2)" class="btn">Tennis</a></li>
+            <li><a id="soccer" onclick="changeSports(1)" class="btn">Soccer</a></li>
+            <li><a id="all" onclick="changeSports(0)" class="btn">All</a></li>
+            <li id="AcasRisk" style=""><a routerLink="/ACasRiskMgmt" class="btn">Cas. Risk Mgmt</a></li>
+         </ul>
+      </div>
+      <div class="top_player-wrap">
+         <h3>
+            <ul class="tab-topplay d-flex">
+               <li id="top10totalFancyStake" class="top10 select"><a onclick="getTopTenClients('totalFancyStake')">Top 20 Matched Amount Player</a></li>
+               <li id="top10liability" class="top10"><a onclick="getTopTenClients('liability')">Top 20 Exposure Player</a></li>
+            </ul>
+         </h3>
+         <div class="d-flex">
+            <div class="col-2">
+               <ul class="slip-head">
+                  <li class="col-playID">UID</li>
+                  <li class="col-exp">Exposure</li>
+                  <li class="col-amount sort-this">Matched Amount</li>
+               </ul>
+               <table class="table01">
+                  <tbody id="content_top_1_5">
+                     <tr id="tempTr_top">
+                        <td class="align-L"><span class="order" id="number">1</span><a onclick="openBetHistory('u1')" id="userId">u1</a></td>
+                        <td id="exposure"><span class="red">(294.00)</span></td>
+                        <td id="amount">294.00</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="col-2">
+               <ul class="slip-head">
+                  <li class="col-playID">UID</li>
+                  <li class="col-exp">Exposure</li>
+                  <li class="col-amount sort-this">Matched Amount</li>
+               </ul>
+               <table class="table01">
+                  <tbody id="content_top_6_10"></tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Match Odds</h2>
+         <a class="btn_replay" onclick="getRiskManagement()" id="refresh_Match_Odds"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="7%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="21%" class="align-C border-l bg-yellow" colspan="3">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Downline P/L</th>
+            </tr>
+            <tr>
+               <th width="7%" class="border-l bg-yellow sky-align">1</th>
+               <th width="7%" class="bg-yellow sky-align">X</th>
+               <th width="7%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="matchOddsListTest">
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L dropSport dropSport32976176odds" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Odds','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L dropDate dropDate32976176odds border-l" rowspan="1" id="1_1" style="">2024-02-02</td>
+               <td class="align-L border-l">
+                  <a onclick="showLiveData('32976176odds','32976176','Odds',32976176)" class="btn open-odds" id="showOddsBtn32976176odds" style="" name="oddsBtn_31162031">Open</a>
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/32976176/Odds','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">India v England</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Match Odds</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="red">(-12.90)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_3"><span class="green">(70.00)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="green">(70.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/32976176/Odds')" class="btn" id="view">View</a></td>
+            </tr>
+            <tr id="expand32976176odds" class="expand" style="display: none;">
+               <td class="border-l align-L" colspan="3">
+                  <img class="expand-arrow" src="/adminfiles/img/transparent.gif">
+                  <iframe id="frame32976176odds" class="frameView" frameborder="0" height="197" scrolling="no"></iframe>
+                  <div class="risk-message" id="risk_message" style="display: none;"></div>
+               </td>
+               <td width="80" class="border-l"></td>
+            </tr>
+         </tbody>
+      </table>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Downline P/L</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">1</th>
+               <th width="9%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="matchOddsListone">
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L dropSport dropSport32986057odds" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Odds','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L dropDate dropDate32986057odds border-l" rowspan="1" id="1_1" style="">2024-02-04</td>
+               <td class="align-L border-l"> 
+                  <a onclick="showLiveData('32986057odds','32986057','Odds',32986057)" class="btn open-odds" id="showOddsBtn32986057odds" style="" name="oddsBtn_31162031">Open</a>
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/32986057/Odds','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">Gulf Giants v Sharjah Warriors</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Match Odds</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="red">(-0.10)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="red">(0.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/32986057/Odds')" class="btn" id="view">View</a></td>
+            </tr>
+            <tr id="expand32986057odds" class="expand" style="display: none;">
+               <td class="border-l align-L" colspan="3">
+                  <img class="expand-arrow" src="/adminfiles/img/transparent.gif">
+                  <iframe id="frame32986057odds" class="frameView" frameborder="0" height="197" scrolling="no"></iframe>
+                  <div class="risk-message" id="risk_message" style="display: none;"></div>
+               </td>
+               <td width="80" class="border-l"></td>
+            </tr>
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L dropSport dropSport32993243odds" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Odds','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L dropDate dropDate32993243odds border-l" rowspan="1" id="1_1" style="">2024-02-05</td>
+               <td class="align-L border-l"> 
+                  <a onclick="showLiveData('32993243odds','32993243','Odds',32993243)" class="btn open-odds" id="showOddsBtn32993243odds" style="" name="oddsBtn_31162031">Open</a>
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/32993243/Odds','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">Sharjah Warriors v Abu Dhabi Knight Riders</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Match Odds</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="green">(0.20)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="red">(0.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/32993243/Odds')" class="btn" id="view">View</a></td>
+            </tr>
+            <tr id="expand32993243odds" class="expand" style="display: none;">
+               <td class="border-l align-L" colspan="3">
+                  <img class="expand-arrow" src="/adminfiles/img/transparent.gif">
+                  <iframe id="frame32993243odds" class="frameView" frameborder="0" height="197" scrolling="no"></iframe>
+                  <div class="risk-message" id="risk_message" style="display: none;"></div>
+               </td>
+               <td width="80" class="border-l"></td>
+            </tr>
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L dropSport dropSport33257236odds" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Odds','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L dropDate dropDate33257236odds border-l" rowspan="1" id="1_1" style="">2024-05-15</td>
+               <td class="align-L border-l"> 
+                  <a onclick="showLiveData('33257236odds','33257236','Odds',33257236)" class="btn open-odds" id="showOddsBtn33257236odds" style="" name="oddsBtn_31162031">Open</a>
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/33257236/Odds','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">Leinster Lightning v Munster Reds</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Match Odds</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="red">(-1.52)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="green">(2.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/33257236/Odds')" class="btn" id="view">View</a></td>
+            </tr>
+            <tr id="expand33257236odds" class="expand" style="display: none;">
+               <td class="border-l align-L" colspan="3">
+                  <img class="expand-arrow" src="/adminfiles/img/transparent.gif">
+                  <iframe id="frame33257236odds" class="frameView" frameborder="0" height="197" scrolling="no"></iframe>
+                  <div class="risk-message" id="risk_message" style="display: none;"></div>
+               </td>
+               <td width="80" class="border-l"></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Book Maker</h2>
+         <a class="btn_replay" onclick="getRiskManagement()" id="refresh_BookMaker_MatchOdds"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="7%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="21%" class="align-C border-l bg-yellow" colspan="3">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Downline P/L</th>
+            </tr>
+            <tr>
+               <th width="7%" class="border-l bg-yellow sky-align">1</th>
+               <th width="7%" class="bg-yellow sky-align">X</th>
+               <th width="7%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="bookMakerListTest">
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L " rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/BooKMaker','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L border-l" rowspan="1" id="1_1" style="">2024-02-02</td>
+               <td class="align-L border-l">
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/32976176/BooKMaker','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">India v England</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Book Maker</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="red">(-13.10)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_3"><span class="green">(50.00)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="green">(50.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/32976176/Book')" class="btn" id="view">View</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Downline P/L</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">1</th>
+               <th width="9%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="bookMakerListone">
+            <tr id="tempTr_MATCH_ODDS_DRAW" class="border-t">
+               <td class="align-L" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/BooKMaker','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L border-l" rowspan="1" id="1_1" style="">2024-02-04</td>
+               <td class="align-L border-l">
+                  <a onclick="window.open('/AriskEventSelectionMatchAmount/match/32986057/BooKMaker','pagename','resizable,height=600,width=550'); return false;" id="marketPath">
+                  <strong id="eventName">Gulf Giants v Sharjah Warriors</strong>
+                  <img class="fromto" src="/adminfiles/img/transparent.gif">
+                  <span id="marketName">Book Maker</span>
+                  </a>
+               </td>
+               <td class="border-l"><a class="" href="javascript:void(0);" id="selection_exposure_1"><span class="green">(10.00)</span></a></td>
+               <td><a class="" href="javascript:void(0);" id="selection_exposure_2"><span class="red">(-9.00)</span></a></td>
+               <td class="border-l"><a onclick="openInNew('/AriskDownLinePL/32986057/Book')" class="btn" id="view">View</a></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Toss</h2>
+         <a class="btn_replay" onclick="getTossRiskManagement()" id="refresh_BookMaker_MatchOdds"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">1</th>
+               <th width="9%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="TossListone">
+            <tr id="tempTr_noData_MATCH_ODDS_DRAW">
+               <td class="no-data" colspan="7">
+                  <p>No Data</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <!-- Fancy Bet  -->
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Fancy Bet</h2>
+         <a class="btn_replay" onclick="getRiskManagementFancyList()" id="refresh_Fancy_Bet"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <!-- Fancy Bet -->
+      <table class="table01 risk_matchodd">
+         <thead>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Books</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">MIN</th>
+               <th width="9%" class="bg-yellow sky-align">MAX</th>
+            </tr>
+         </thead>
+         <tbody id="fancyRiskList">
+            <tr id="tempTr_noData_MATCH_ODDS_DRAW">
+               <td class="no-data" colspan="7">
+                  <p>No Data</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Sports Book</h2>
+         <a class="btn_replay" href="" id="refresh_Ow"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L">Sports</th>
+               <th width="8%" class="align-L">Market Date</th>
+               <th class="align-L">Event/Market Name</th>
+               <th width="26%" class="">Matched Amount</th>
+            </tr>
+         </tbody>
+         <tbody id="content_Ow">
+            <tr id="tempTr_noData_Ow">
+               <td class="no-data" colspan="4">
+                  <p>No Data
+                  </p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Premium Cricket</h2>
+         <a class="btn_replay" onclick="getRiskManagementPremiumList()" id="refresh_Sportradar"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L">Sports</th>
+               <th width="8%" class="align-L">Market Date</th>
+               <th class="align-L">Event/Market Name</th>
+               <th width="26%" class="">Matched Amount</th>
+            </tr>
+         </tbody>
+         <tbody id="premiumDesign">
+            <tr id="tempTr_Sportradar" class="border-t">
+               <td class="align-L" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Premium','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L border-l" rowspan="1" id="1_1" style="">2025-04-25</td>
+               <td class="align-L border-l">
+                  <a href="javascript:void(0);" id="marketPath" style="margin:0">
+                  <strong id="eventName">Nottinghamshire v Sussex</strong>
+                  <img class="fromto" src="/img/transparent.gif">
+                  <span id="marketName">1st innings - Nottinghamshire total fours</span>
+                  </a>
+               </td>
+               <td class="border-l" id="amount">10</td>
+            </tr>
+            <tr id="tempTr_Sportradar" class="border-t">
+               <td class="align-L" rowspan="1" style="" id="0_1"><a id="eventType" onclick="window.open('/AriskEventSelectionMatchAmount/sports/4/Premium','pagename','resizable,height=600,width=550'); return false;">Cricket</a></td>
+               <td class="align-L border-l" rowspan="1" id="1_1" style="">2025-04-25</td>
+               <td class="align-L border-l">
+                  <a href="javascript:void(0);" id="marketPath" style="margin:0">
+                  <strong id="eventName">Nottinghamshire v Sussex</strong>
+                  <img class="fromto" src="/img/transparent.gif">
+                  <span id="marketName">1st innings - Slater, Ben total</span>
+                  </a>
+               </td>
+               <td class="border-l" id="amount">10</td>
+            </tr>
+            
+         </tbody>
+      </table>
+   </div>
+   <!-- TS_BINARY  -->
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Binary</h2>
+         <a class="btn_replay" href="" id="refresh_Binary"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01 risk_matchodd">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+               <th width="6%" class="align-C border-l" rowspan="2">Books</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">MIN</th>
+               <th width="9%" class="bg-yellow sky-align">MAX</th>
+            </tr>
+         </tbody>
+         <tbody id="content_TS_BINARY">
+            <tr id="tempTr_noData_TS_BINARY">
+               <td class="no-data" colspan="6">
+                  <p>No Data
+                  </p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div class="match-wrap">
+      <div class="total_all">
+         <h2>Other Markets</h2>
+         <a class="btn_replay" onclick="getOtherRiskManagement()" id="refresh_Other_Market"><i class="fas fa-redo-alt"></i></a>
+      </div>
+      <table class="table01">
+         <tbody>
+            <tr>
+               <th width="10%" class="align-L" rowspan="2">Sports</th>
+               <th width="8%" class="align-L" rowspan="2">Market Date</th>
+               <th class="align-L" rowspan="2">Event/Market Name</th>
+               <th width="18%" class="align-C border-l bg-yellow" colspan="2">Player P/L</th>
+            </tr>
+            <tr>
+               <th width="9%" class="border-l bg-yellow sky-align">1</th>
+               <th width="9%" class="bg-yellow sky-align">2</th>
+            </tr>
+         </tbody>
+         <tbody id="OtherListone">
+            <tr id="tempTr_noData_MATCH_ODDS_DRAW">
+               <td class="no-data" colspan="7">
+                  <p>No Data</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

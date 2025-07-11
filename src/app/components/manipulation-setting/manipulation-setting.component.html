@@ -1,0 +1,92 @@
+<div class="main_wrap" style="height: calc(100% - 105px)" bis_skin_checked="1">
+   <!-- function -->
+   <div class="function-wrap col-lg-12" bis_skin_checked="1">
+      <div class="col-lg-2" bis_skin_checked="1">
+         <label>Select target</label>
+         <select class="form-control purp" id="oddsTypeSelect">
+            <option value="-1">Select Target</option>
+            <option value="Odds">Odds</option>
+            <option value="BookMaker">BookMaker</option>
+         </select>
+      </div>
+      <div class="col-lg-2" id="TypeSelectDiv" style="" bis_skin_checked="1">
+         <label>Select Type</label>
+         <select class="form-control purp" id="TypeSelect">
+            <option value="-1">Select Type</option>
+            <option value="static">Static</option>
+            <option value="real">Real</option>
+         </select>
+      </div>
+      <div class="col-lg-2" id="rangeSelectDiv" style="" bis_skin_checked="1">
+         <label>Select Range</label>
+         <select class="form-control purp" id="rangeSelect">
+            <option value="-1">Select Range</option>
+            <option value="type1">1||0.01||0.1-Gap||0.1||0.85</option>
+            <option value="type2">1||0.01||0.15-Gap||0.15||0.85</option>
+         </select>
+      </div>
+      <div class="col-lg-2" id="gapSelectDiv" style="" bis_skin_checked="1">
+         <label>Select Gap</label>
+         <select class="form-control purp" id="gapSelect">
+            <option value="-1">Select Gap</option>
+            <option>0.01</option>
+            <option>0.015</option>
+            <option>0.02</option>
+            <option>0.025</option>
+            <option>0.03</option>
+            <option>0.035</option>
+            <option>0.04</option>
+            <option>0.045</option>
+            <option>0.05</option>
+            <option>0.055</option>
+            <option>0.06</option>
+            <option>0.065</option>
+            <option>0.07</option>
+            <option>0.075</option>
+            <option>0.08</option>
+            <option>0.085</option>
+            <option>0.09</option>
+            <option>0.095</option>
+            <option>0.10</option>
+         </select>
+      </div>
+      <div class="col-lg-2" bis_skin_checked="1">
+         <button class="btn-send" style="width:80px;" onclick="addManipulation()">Submit</button>
+      </div>
+   </div>
+   <div id="widthAll" class="width-all" bis_skin_checked="1">
+      <table id="resultTable" class="table01 margin-table" style="display: table;">
+         <tbody>
+            <tr>
+               <th id="accountTh" width="10%" class="align-L" style="">S.No.</th>
+               <th id="creditRefTh" width="10%">Odds Type</th>
+               <th id="balanceTh" width="10%">Type</th>
+               <th id="exposureTh" width="10%">Info</th>
+               <th id="actionTh" width="15%">Status</th>
+            </tr>
+            <tr id="1" style="display: table-row;" main_userid="butler22">
+               <td id="accountCol" class="align-L">#</td>
+               <td id="creditRef1" class="credit-amount-member" style="">
+                  Odds
+               </td>
+               <td id="balance1">Real</td>
+               <td id="currentExposure1"><a class="openrangemodal">Info</a></td>
+               <td id="currentExposure1">
+                  IS OFF
+               </td>
+            </tr>
+            <tr id="1" style="display: table-row;" main_userid="butler22">
+               <td id="accountCol" class="align-L">#</td>
+               <td id="creditRef1" class="credit-amount-member" style="">
+                  Bookmaker
+               </td>
+               <td id="balance1">Real</td>
+               <td id="currentExposure1"><a class="openrangemodal">Info</a></td>
+               <td id="currentExposure1">
+                  IS OFF
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

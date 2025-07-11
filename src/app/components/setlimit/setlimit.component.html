@@ -1,0 +1,217 @@
+<div class="main_wrap" style="height: calc(100% - 105px)">
+   <!-- function -->
+   <button class="btn-send" style="width:80px" onclick="setLimit()">Set Limit</button>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Auto Odds Min Max</h2>
+      </div>
+      <div class="row">
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Min 	 
+            <input type="number" class="form-control" id="autoOddsMinPre" placeholder="Pre Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Max <input type="number" class="form-control" id="autoOddsMaxPre" placeholder="Pre Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	Pre Max PL <input type="number" class="form-control" min="0" id="oddsPLPre" placeholder="Pre Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Min 	 
+            <input type="number" class="form-control" id="autoOddsMin" placeholder="Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max <input type="number" class="form-control" id="autoOddsMax" placeholder="Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Profit <input type="number" class="form-control" min="0" id="oddsPL" placeholder="Odds Profit Loss" style=""></label>
+         </div>
+      </div>
+      <div class="row" style="margin:0">
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Bet Delay <input type="number" class="form-control" min="0" id="autoOddsDelay" placeholder="Enter Delay" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Bhav <input type="number" class="form-control" min="0" id="autoMaxBhav" onkeypress="return isNumberKeyWithDot(event)" placeholder="Enter Bhav" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <div class="user-lock-search" style="position: relative;">
+               <div class="confirm-bets" style="padding:7px;">
+                  <div class="custom-control custom-switch">
+                     <input id="autoOddsRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                     <label for="autoOddsRadio" class="custom-control-label" id="autoOddsRadioVal">ON</label><span> (IS SHOWING)</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Other Market Min Max</h2>
+      </div>
+      <div class="row" style="margin:0">
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Min 	 
+            <input type="number" class="form-control" id="OtherMinPre" placeholder="Pre Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Max <input type="number" class="form-control" id="OtherMaxPre" placeholder="Pre Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	Pre Max PL <input type="number" class="form-control" min="0" id="OtherPLPre" placeholder="Pre Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Min 	 
+            <input type="number" class="form-control" id="OtherMin" placeholder="Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max <input type="number" class="form-control" id="OtherMax" placeholder="Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Profit <input type="number" class="form-control" min="0" id="OtherPL" placeholder=" Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Bet Delay <input type="number" class="form-control" min="0" id="OtherDelay" placeholder="Enter Delay" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Bhav <input type="number" class="form-control" min="0" id="OtherMaxBhav" onkeypress="return isNumberKeyWithDot(event)" placeholder="Enter Bhav" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <div class="user-lock-search" style="position: relative;">
+               <div class="confirm-bets" style="padding:7px;">
+                  <div class="custom-control custom-switch">
+                     <input id="otherOddsRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                     <label for="otherOddsRadio" class="custom-control-label" id="otherOddsRadioVal">ON</label><span> (IS SHOWING)</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set BookMaker Min Max</h2>
+      </div>
+      <div class="row" style="margin:0">
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Min 	 
+            <input type="number" class="form-control" id="bookMinPre" placeholder="Pre Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Max <input type="number" class="form-control" id="bookMaxPre" placeholder="Pre Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	Pre Max PL <input type="number" class="form-control" min="0" id="bookPLPre" placeholder="Pre Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Min 	 
+            <input type="number" class="form-control" id="bookMakerMin" placeholder="Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max <input type="number" class="form-control" id="bookMakerMax" placeholder="Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Profit <input type="number" class="form-control" min="0" id="BookPL" placeholder="Odds Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Bet Delay <input type="number" class="form-control" min="0" id="bookMakerDelay" placeholder="Enter Delay" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Bhav <input type="number" class="form-control" min="0" id="bookMaxBhav" onkeypress="return isNumberKeyWithDot(event)" placeholder="Enter Bhav" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <div class="user-lock-search" style="position: relative;">
+               <div class="confirm-bets" style="padding:7px;">
+                  <div class="custom-control custom-switch">
+                     <input id="bookMakerRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                     <label for="bookMakerRadio" class="custom-control-label" id="bookMakerRadioVal">ON</label><span> (IS SHOWING)</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Auto Fancy Min Max</h2>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">Pre Min 	 
+         <input type="number" class="form-control" id="fancyMinPre" placeholder="Pre Min Bet" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">Pre Max <input type="number" class="form-control" id="fancyMaxPre" placeholder="Pre Max Bet" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">	Pre Max PL <input type="number" class="form-control" min="0" id="fancyPLPre" placeholder="Pre Profit Loss" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">	 Min 	 
+         <input type="number" class="form-control" id="autoFancyMin" placeholder="Min Bet" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">	 Max 	<input type="number" class="form-control" id="autoFancyMax" placeholder="Max Bet" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">	 Max Profit <input type="number" class="form-control" min="0" id="autoFancyPL" placeholder="Fancy Profit Loss" style=""></label>
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <label style="width:100%">	 Bet Delay <input type="number" class="form-control" min="0" id="autoFancyDelay" placeholder="Enter Delay" style=""></label>
+      </div>
+      <div class="col-lg-4 col-xs-6" style="margin-bottom:5px">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="autoFancyRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="autoFancyRadio" class="custom-control-label" id="autoFancyRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Premium Min Max</h2>
+      </div>
+      <div class="row" style="margin:0">
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Min 	 
+            <input type="number" class="form-control" id="premMinPre" placeholder="Pre Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">Pre Max <input type="number" class="form-control" id="premMaxPre" placeholder="Pre Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	Pre Max PL <input type="number" class="form-control" min="0" id="premPLPre" placeholder="Pre Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Min 	 
+            <input type="number" class="form-control" id="premMin" placeholder="Min Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max <input type="number" class="form-control" id="premMax" placeholder="Max Bet" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Profit <input type="number" class="form-control" min="0" id="premPL" placeholder="Odds Profit Loss" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Bet Delay <input type="number" class="form-control" min="0" id="premDelay" placeholder="Enter Delay" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <label style="width:100%">	 Max Bhav <input type="number" class="form-control" min="0" id="premMaxBhav" onkeypress="return isNumberKeyWithDot(event)" placeholder="Enter Bhav" style=""></label>
+         </div>
+         <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+            <div class="user-lock-search" style="position: relative;">
+               <div class="confirm-bets" style="padding:7px;">
+                  <div class="custom-control custom-switch">
+                     <input id="premRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                     <label for="premRadio" class="custom-control-label" id="premRadioVal">ON</label><span> (IS SHOWING)</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button class="btn-send" style="width:80px" onclick="setLimit()">Set Limit</button> 
+</div>

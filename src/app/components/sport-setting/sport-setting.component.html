@@ -1,0 +1,55 @@
+<div class="main_wrap" style="height: calc(100% - 105px)" bis_skin_checked="1">
+   <h2>Sport Settings</h2>
+   <!-- function -->
+   <div class="function-wrap" bis_skin_checked="1">
+      <ul class="input-list">
+         <li><a id="cricket" onclick="getActiveMatchList(4)" class="btn-send">Cricket</a></li>
+         <li><a id="tennis" onclick="getActiveMatchList(2)" class="btn">Tennis</a></li>
+         <li><a id="soccer" onclick="getActiveMatchList(1)" class="btn">Soccer</a></li>
+      </ul>
+   </div>
+   <div id="games" class="width-all" bis_skin_checked="1">
+      <table id="resultTable" class="table01 margin-table" style="display: table;">
+         <thead>
+            <tr>
+               <th id="accountTh" width="10%" class="align-L" style="">Match ID</th>
+               <th id="creditRefTh" width="10%" style="">Match Name</th>
+               <th id="balanceTh" width="10%" style="">Market ID</th>
+               <th id="balanceh" width="10%" style="">Cup Winner</th>
+               <th id="exposureTh" width="10%" style="">Open Date</th>
+               <th id="actionTh" width="15%" style="">Action</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr id="1" style="display: table-row;" main_userid="butler22">
+               <td id="accountCol" style="" class="align-L">33642380</td>
+               <td id="creditRef1" class="credit-amount-member" style="">Ireland v South Africa</td>
+               <td id="balance1" style="">1.233737217</td>
+               <td id="" style="display: -webkit-inline-box;"> -- </td>
+               <td id="currentExposure1" style="">2024-10-02 17:00:00</td>
+               <td id="" style="display: -webkit-inline-box;">
+                  <a id="getPL" routerLink="/AMinMaxBet" class="btn-send" style="width:120px;margin-right:1px">Set Limit</a>
+                  <a id="getPL" routerLink="/ABookmaketSetting" class="btn-send" style="width:120px;margin-right:1px">Set Bookmaker</a>
+                  <a id="getPL" routerLink="/AManuplationSetting" class="btn-send" style="width:120px;margin-right:1px">Manuplation</a>
+                  <a title="Set Cup Winner" onclick="AddTitle(`33642380` , `Ireland v South Africa`)" class="btn-send" style="width:120px;margin-right:1px">S.C.W</a>
+               </td>
+            </tr>
+            <tr id="1" style="display: table-row;" main_userid="butler22">
+               <td id="accountCol" style="" class="align-L">27996014</td>
+               <td id="creditRef1" class="credit-amount-member" style="">Twenty20 Big Bash</td>
+               <td id="balance1" style="">1.232699552</td>
+               <td id="" style="display: -webkit-inline-box;">
+                  <a title="Set Cup Winner" onclick="AddTitle(`27996014` , `Twenty20 Big Bash`)" class="btn-send" style="width:120px;margin-right:1px">Edit</a>
+               </td>
+               <td id="currentExposure1" style="">2024-12-14 13:45:00</td>
+               <td id="" style="display: -webkit-inline-box;">
+                  <a id="getPL" routerLink="/AMinMaxBet" class="btn-send" style="width:120px;margin-right:1px">Set Limit</a>
+                  <a id="getPL" routerLink="/ABookmaketSetting" class="btn-send" style="width:120px;margin-right:1px">Set Bookmaker</a>
+                  <a id="getPL" routerLink="/AManuplationSetting" class="btn-send" style="width:120px;margin-right:1px">Manuplation</a>
+                  <a title="Set Cup Winner" onclick="AddTitle(`27996014` , `Twenty20 Big Bash`)" class="btn-send" style="width:120px;margin-right:1px">S.C.W</a>
+               </td>
+            </tr> 
+         </tbody>
+      </table>
+   </div>
+</div>

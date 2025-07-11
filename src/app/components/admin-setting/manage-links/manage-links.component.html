@@ -1,0 +1,240 @@
+<div class="main_wrap" style="height: calc(100% - 105px)">
+   <!-- function -->
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-2">
+         <label>Select Website</label>
+         <select class="form-control purp" id="websiteList" onchange="getLinksList(this)">
+            <option> <a href="#">Select Website</a> </option>
+            <option id="wonderbets.in" value="wonderbets.in" name="wonderbets.in"> wonderbets.in </option>
+            <option id=" dmd d" value=" dmd d" name=" dmd d">  dmd d </option>
+            <option id="subhashinijozbiz.com" value="subhashinijozbiz.com" name="subhashinijozbiz.com"> subhashinijozbiz.com </option>
+            <option id="abc" value="abc" name="abc"> abc </option>
+            <option id="pranav" value="pranav" name="pranav"> pranav </option>
+            <option id="sai" value="sai" name="sai"> sai </option>
+            <option id="Eminence" value="Eminence" name="Eminence"> Eminence </option>
+            <option id="rohit.com" value="rohit.com" name="rohit.com"> rohit.com </option>
+            <option id="games.betsexch.in" value="games.betsexch.in" name="games.betsexch.in"> games.betsexch.in </option>
+            <option id="test.com" value="test.com" name="test.com"> test.com </option>
+            <option id="bhabanisankar" value="bhabanisankar" name="bhabanisankar"> bhabanisankar </option>
+            <option id="bob.com" value="bob.com" name="bob.com"> bob.com </option>
+            <option id="ads" value="ads" name="ads"> ads </option>
+            <option id="testing.newcasinoapi.in" value="testing.newcasinoapi.in" name="testing.newcasinoapi.in"> testing.newcasinoapi.in </option>
+         </select>
+      </div>
+      <ul class="input-list" style="float:right" id="companySearchUl">
+         <li class="bank-li">
+            <a style="width:110px" routerLink="/AAddWebsiteSetting" class="btn-send banking-btn">Add Website</a>
+         </li>
+      </ul>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Telegram</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="telegramContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="telegramRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="telegramRadio" class="custom-control-label" id="telegramRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Whatsapp</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="whatsappContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="whatsappRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="whatsappRadio" class="custom-control-label" id="whatsappRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Email</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="emailContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="emailRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="emailRadio" class="custom-control-label" id="emailRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Skype</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="skypeContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="skypeRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="skypeRadio" class="custom-control-label" id="skypeRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Instagram</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="instagramContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="instagramRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="instagramRadio" class="custom-control-label" id="instagramRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Facebook</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="facebookContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="facebookRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="facebookRadio" class="custom-control-label" id="facebookRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Signup</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="signupContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="signupRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="signupRadio" class="custom-control-label" id="signupRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set App Link</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="appContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="appRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="appRadio" class="custom-control-label" id="appRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set SABA Link</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Number/Links <input type="text" class="form-control" id="sabaContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="sabaRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="sabaRadio" class="custom-control-label" id="sabaRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+   <div class="function-wrap col-lg-12">
+      <div class="col-lg-12" style="margin-bottom:5px;">
+         <h2>Set Validation Code</h2>
+      </div>
+      <div class="col-lg-3" style="margin-bottom:5px;">
+         <label>	 Content <input type="text" class="form-control" id="validContent" placeholder="Enter Number or Links" readonly="readonly"> </label> 
+      </div>
+      <div class="col-lg-2 col-xs-6" style="margin-bottom:5px;">
+         <div class="user-lock-search" style="position: relative;">
+            <div class="confirm-bets" style="padding:7px;">
+               <div class="custom-control custom-switch">
+                  <input id="validRadio" type="checkbox" name="autocon-1" data-toggle="toggle" class="custom-control-input" value="true">
+                  <label for="validRadio" class="custom-control-label" id="validRadioVal">ON</label><span> (IS SHOWING)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-2 " style="margin-bottom:5px;">
+         <button style="width:80px" class="btn-send" onclick="setLimit()">Update</button>
+      </div>
+   </div>
+</div>

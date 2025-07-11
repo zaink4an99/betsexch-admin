@@ -1,0 +1,179 @@
+<div class="full-wrap" style="height: calc(100% - 105px)">
+   <h2>Banking</h2>
+   <div class="total_all banking-top">
+      <div class="search-wrap" id="userSearchUl">
+         <div>
+            <input class="search-input" type="text" name="searchUserId" id="userId" placeholder="Enter userId..." readonly="readonly">
+         </div>
+      </div>
+      <ul class="input-list" id="companySearchUl">
+         <li class="bank-li">
+            <a class="btn-send banking-btn" href="#" id="searchKey">Search</a>
+         </li>
+      </ul>
+      <ul class="input-list" id="accountStatusUl">
+         <li><strong>Status</strong></li>
+         <li>
+            <select class="" name="accountStatus" id="accountStatus">
+               <option value="0">ACTIVE
+               </option>
+               <option value="1">SUSPENDED
+               </option>
+               <option value="2">LOCKED
+               </option>
+               <option value="-1">ALL</option>
+            </select>
+         </li>
+      </ul>
+   </div>
+ 
+   <div class="report_over-wrap" style="max-height: calc(100% - 208px)">
+      <div class="function-wrap clearfix">
+         <dl class="banking-head float-L">
+            <dt>Your Balance</dt>
+            <dd id=""><span>PBU</span><strong id="yourBalance">198,762.00</strong></dd>
+         </dl>
+         <ul class="input-list float-R" style="display: none;">
+            <li><label>Sort by</label></li>
+            <li>
+               <select id="sort">
+                  <option value="userId">UID</option>
+                  <option value="site">Site</option>
+                  <option value="currencyType">Currency</option>
+               </select>
+            </li>
+         </ul>
+      </div>
+      <table style="display: none;">
+         <tbody>
+            <tr id="tempTr">
+               <td class="td-uid" id="userId"></td>
+               <td id="siteCol" style="display: none"></td>
+               <td id="currencyTypeCol" style="display: none"></td>
+               <td id="balance"></td>
+               <td id="availableBalance"></td>
+               <td id="userExposure"></td>
+               <td class="DW-amount">
+                  <ul class="btn_list-DW">
+                     <li><a id="dBtn" class="btn" href="#">D</a></li>
+                     <li><a id="wBtn" class="btn" href="#">W</a></li>
+                  </ul>
+                  <input id="amount" name="amount" class="" type="text" placeholder="0" maxlength="18" readonly="readonly">
+                  <a id="fullBtn" href="javascript:void(0);" class="btn float-L disable">Full</a>
+               </td>
+               <td class="credit-amount">
+                  <a href="javascript:void(0);" id="userCreditReference"></a>
+                  <input id="editCreditReference" name="editCreditReference" class="" type="text" placeholder="0" maxlength="18" style="display: none;" readonly="readonly">
+                  <a id="editCreditReferenceBtn" href="javascript:void(0);" class="btn">Edit</a>
+                  <a id="cancelCreditReferenceBtn" href="javascript:void(0);" class="btn" style="display: none;">Cancel</a>
+               </td>
+               <td id="userReferencePL"></td>
+               <td class="border-l"><input id="remark" class="" type="text" placeholder="Remark" readonly="readonly"></td>
+               <td class="full-amount">
+                  <a id="log" class="btn">Log</a>
+               </td>
+            </tr>
+            <tr id="tempBalanceTr" class="expand first expand-balance">
+               <td></td>
+               <td colspan="10">
+                  <img class="expand-arrow" src="/adminfiles/img/transparent.gif">
+                  <table>
+                     <tbody id="tempVendorContent">
+                        <tr>
+                           <th width="9%" class="align-L">Game</th>
+                           <th width="11%">Balance</th>
+                           <th width="7%"><a id="recallAll" href="#" class="btn-recall">Recall All</a></th>
+                           <th></th>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr id="tempVendorTr">
+               <td id="vendorTitle" class="align-L">Houise</td>
+               <td id="vendorBalance">200,000,000,000.00</td>
+               <td><a id="recall" href="#" class="btn-recall">Recall</a></td>
+               <td></td>
+            </tr>
+            <tr id="noDataTempTr">
+               <td class="no-data" colspan="11">
+                  <p>No Data</p>
+               </td>
+            </tr>
+            <tr id="totalTempTr" class="total">
+               <td class="align-L">Total</td>
+               <td id="totalSite" style="display: none"></td>
+               <td id="totalCurrencyType" style="display: none"></td>
+               <td id="totalBalance"></td>
+               <td id="totalAvailableBalance"></td>
+               <td id="totalExposure"></td>
+               <td id="totalCreditReference" class="" colspan="2"></td>
+               <td id="totalReferencePL"></td>
+               <td></td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <table id="table_transfer" class="table01 tab-transfer tab-banking">
+         <colgroup>
+            <col span="1" width="190">
+            <col span="1" width="120" style="display: none" id="siteColumn">
+            <col span="1" width="120" style="display: none" id="currencyTypeColumn">
+            <col span="1" width="120">
+            <col span="1" width="120">
+            <col span="1" width="120">
+            <col span="1" width="280">
+         </colgroup>
+         <tbody>
+            <tr>
+               <th id="userIdTH" class="align-L sort-this">UID</th>
+               <th id="siteTH" style="display: none">Site</th>
+               <th id="currencyTypeTH" style="display: none">Currency</th>
+               <th class="sky-align">Balance</th>
+               <th class="sky-align">Available D/W</th>
+               <th class="sky-align">Exposure</th>
+               <th class="align-C border-l">Deposit / Withdraw</th>
+               <th class="border-l sky-align">Remark</th>
+               <th class="full-amount" style="width:7%">
+                  Logs
+               </th>
+            </tr>
+         </tbody>
+         <tbody id="userData">
+            <tr id="satest" style="display: table-row;" main_userid="satest">
+               <td class="td-uid" id="userId"><span class="order">1</span>satest</td>
+               <td id="balance">1,138.00</td>
+               <td id="balance">1,138.00</td>
+               <td id="balance" style="">0.00</td>
+               <td class="DW-amount">
+                  <ul id="ulDWsatest" class="btn_list-DW">
+                     <li><a id="dBtn" class="btn" onclick="loadDepo(0)">D</a></li>
+                     <li><a id="wBtn" class="btn" onclick="loadWith(0)">W</a></li>
+                  </ul>
+                  <input id="amountsatest" onkeypress="return isNumberKeyWithDot(event)" onkeyup="validateAmount(0);" onpaste="return false;" readonly="true" ondrop="return false;" name="amount" class="" type="number" placeholder="0" maxlength="18"><a id="fullBtnsatest" onclick="loadFull(0)" class="btn float-L disable">Full</a>
+               </td>
+               <td class="border-l"><input id="remarksatest" onkeyup="addRemark(0);" class="" type="text" placeholder="Remark"></td>
+               <td class="full-amount"><a id="log" href="/Atransactionhistory/satest/1" class="btn">Log</a></td>
+            </tr> 
+         </tbody>
+      </table>
+      <div id="paginationList">
+         <ul id="pageNumberContent" class="pages">
+            <li id="prev"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Prev</a></li>
+            <li id="pageNumber"><a href="javascript:void(0);" class="select" style="pointer-events: none;">1</a></li>
+            <li id="next"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Next</a></li>
+            <input type="text" id="goToPageNumber_1" maxlength="6" size="4"><a id="goPageBtn_1">GO</a>
+         </ul>
+      </div>
+   </div>
+   <div class="submit-wrap" id="settlementBar">
+      <ul>
+         <li><a id="clearAllBtn" class="btn">Clear All</a></li>
+         <li class="submit-payment">
+            <input id="paymentPassword" type="password" placeholder="Password">
+            <a id="buttonSubmit" onclick="processData()" class="btn-send">Submit <span id="submitCount">0</span>
+            Payment</a>
+         </li>
+      </ul>
+   </div>
+</div>

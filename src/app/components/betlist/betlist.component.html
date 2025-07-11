@@ -1,0 +1,118 @@
+<div class="full-wrap" style="height: calc(100% - 105px)">
+   <!-- Center Column -->
+   <div class="over-wrap">
+      <!-- Loading Wrap -->
+      <h2>Bet List</h2>
+      <!-- function -->
+      <div class="function-wrap">
+         <ul class="input-list">
+            <li>
+               <label>Sport:</label>
+               <select class="form-control purp" id="sportidResult">
+                  <option value="4">Cricket</option>
+                  <option value="2">Tennis</option>
+                  <option value="1">Soccer</option>
+               </select>
+            </li>
+            <li><label>Period</label></li>
+            <li>
+               <input id="startDate" class="cal-input" type="date" placeholder="YYYY-MM-DD">
+               <input id="startTime" class="time-input " type="text" placeholder="09:00" maxlength="5" readonly="readonly">
+               to
+               <input id="endDate" class="cal-input" type="date" placeholder="YYYY-MM-DD">
+               <input id="endTime" class="time-input " type="text" placeholder="08:59" maxlength="5" readonly="readonly">
+            </li>
+         </ul>
+         <ul class="input-list">
+            <li><a id="today" onclick="changeDate('today')" class="btn">Just For Today</a></li>
+            <li><a id="yesterday" onclick="changeDate('yesterday')" class="btn">From Yesterday</a></li>
+            <li><a id="getPL" onclick="changeDate('all')" class="btn-send">Get Matches</a></li>
+         </ul>
+         <ul class="input-list">
+            <div id="statusCondition" class="d-flex">
+               <li><label>Bet Status:</label></li>
+               <li>
+                  <select name="betStatus" id="betStatus">
+                     <!--  <option value="0">Unmatched</option>
+                        <option value="1">Matched</option> -->
+                     <option value="2">Settled</option>
+                     <option value="3">Cancelled</option>
+                     <option value="4">Voided</option>
+                  </select>
+               </li>
+            </div>
+            <li><a id="getPL" onclick="betHistory()" class="btn-send">Filter Bets</a></li>
+         </ul>
+      </div>
+      <!-- No Report Message -->
+      <div id="noReportMessage">
+         <p>Bet List enables you to review the bets you have placed. <br>Specify the time period during which
+            your bets were placed, the type of markets on which the bets were placed, and the sport.
+         </p>
+         <p>Bet List is available online for the past 30 days.</p>
+         <ul class="input-list" style="float:right">
+            <li><a id="getPL" onclick="resultList(true)" class="btn-send">Back</a></li>
+         </ul>
+      </div>
+      <table id="matchListTables" class="table-s" style="">
+         <thead>
+            <tr>
+               <th width="8%" class="align-L">S.no</th>
+               <th width="8%" class="align-L">Match Name</th>
+               <th width="8%" class="align-L">Action</th>
+            </tr>
+         </thead>
+         <tbody id="matchListTable">
+            <tr>
+               <td style="text-align: left">0</td>
+               <td style="text-align: left">West Indies v Australia</td>
+               <td><a onclick="betHistory('34448947','Odds')"><button class="btn-send" style="float: left; margin: 4px;width:100px">Odds Bets</button></a><a onclick="betHistory('34448947','Book')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: brown;color: #fff;">BookMaker Bets</button></a><a onclick="betHistory('34448947','Fancy')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: tomato;color: #fff;">Fancy Bets</button></a><a onclick="betHistory('34448947','Fancy1')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: teal;color: #fff;">Fancy1 Bets</button></a><a onclick="betHistory('34448947','Premium')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: steelblue;color: #fff;">Premium Bets</button></a><a onclick="betHistory('34448947','Other')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: sienna;color: #fff;">Other Bets</button></a></td>
+            </tr>
+            <tr>
+               <td style="text-align: left">1</td>
+               <td style="text-align: left">Sri Lanka v Bangladesh</td>
+               <td><a onclick="betHistory('34440606','Odds')"><button class="btn-send" style="float: left; margin: 4px;width:100px">Odds Bets</button></a><a onclick="betHistory('34440606','Book')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: brown;color: #fff;">BookMaker Bets</button></a><a onclick="betHistory('34440606','Fancy')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: tomato;color: #fff;">Fancy Bets</button></a><a onclick="betHistory('34440606','Fancy1')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: teal;color: #fff;">Fancy1 Bets</button></a><a onclick="betHistory('34440606','Premium')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: steelblue;color: #fff;">Premium Bets</button></a><a onclick="betHistory('34440606','Other')"><button class="btn-send" style="float: left; margin: 4px;width:100px;background: sienna;color: #fff;">Other Bets</button></a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table id="betsListTables" class="table-s" style="display: none;">
+         <thead>
+            <tr>
+               <th width="8%" class="align-L">PL ID</th>
+               <th width="5%" class="align-L">Bet ID
+               </th>
+               <th id="betTime" width="6%" class="align-L">Bet placed</th>
+               <th width="7%" class="align-L">IP Address</th>
+               <th width="" class="align-L">Market
+               </th>
+               <th width="7%" class="align-L">Selection
+               </th>
+               <th width="4%" class="align-C">Type
+               </th>
+               <th width="4%">Odds req.
+               </th>
+               <th width="8%">Stake
+               </th>
+               <th width="5%">Liability
+               </th>
+               <th width="5%" name="profitOrLossTh">Profit/Loss
+               </th>
+               <th width="3%" id="currencyType_title" style="display: none">Currency
+               </th>
+               <th width="5%" id="site_title" style="display: none">Site
+               </th>
+               <th width="5%" id="onePT_title" style="display: none">Percentage PT</th>
+               <th width="5%" id="afterPT_title" style="display: none">PSB After PT</th>
+               <th width="5%" id="afterPTInEUR_title" style="display: none">H.PT in EURO</th>
+            </tr>
+         </thead>
+         <tbody id="betsListTable">
+         </tbody>
+      </table>
+      <div>
+         <ul id="pageNumberContent" class="pages" style="display: none;">
+         </ul>
+      </div>
+      <!-- function end-->
+   </div>
+</div>

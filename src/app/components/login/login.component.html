@@ -1,0 +1,69 @@
+<div class="wickets">
+    <div class="login-wrap">
+    <div class="kv">
+        <img id="poupppLogo" src="https://imagedelivery.net/91xvae4aKE4d2nwBRzFV2g/?v=0.04">
+    </div>
+    <h2 style="color:#000;font-weight:bold;text-align:center;" id="loginMessage">-</h2>
+    <form name="loginForm" onsubmit="return validateForm()" action="/managementHome" method="post" accept-charset="utf-8" autocomplete="off">
+        <dl class="login-panel">
+            <dt>Agent login</dt>
+            <dd><input id="userid" name="userid" type="text" placeholder="Username">
+                <input type="hidden" name="adminId" id="addressBox" data-role="none" placeholder="address">
+            </dd>
+            <dd style="display:flex;align-items:center;">
+                <input id="password" name="password" type="password" placeholder="Password">
+                <i onclick="showpwd()" style="position:absolute;color:#000;right:2px;font-size:18px;" class="fa fa-eye-slash" aria-hidden="true"></i>
+            </dd>
+            <dd class="valid-code" id="validCodedd">
+                <input id="validCode" type="number" name="code" placeholder="Validation Code" maxlength="4">
+                <span>
+                <canvas id="canvas" style="position:absolute;width:70px;right:-15px;top:6px;font-weight:bold;text-align:right" width="100" height="40"></canvas>
+                </span>
+            </dd>
+            <dd><input id="valid" name="valid" type="hidden" value=""></dd>
+            <dd><button id="loginBtn" type="submit" class="btn-send" routerLink="/adminhome">Login
+                <img class="icon-login" src="/adminfiles/img/transparent.gif?v=1640852734312"></button>
+            </dd>
+            <dd id="errorMsg" class="error" style="display:none;"></dd>
+        </dl>
+    </form>
+    </div>
+    <div class="moreinfo-wrap">
+    <div id="supportWrap" class="support-wrap">
+        <div class="support-service">
+            <a id="support_email" href="#" class="support-mail ui-link"><img src="/assets/images/transparent.gif" title="Email"></a>
+            <a id="support_whatsapp" class="support-whatsapp ui-link"><img src="/assets/images/transparent.gif" title="WhatsApp"></a>
+            <a id="support_telegram" class="support-telegram ui-link open"><img src="/assets/images/transparent.gif" title="Telegram"></a>
+            <a id="support_skype" href="#" style="display:none;" class="support-skype ui-link"><img src="/assets/images/transparent.gif" title="Skype"></a>
+            <a id="support_instagram" style="display:none;" href="#" class="support-ig ui-link"><img src="/assets/images/transparent.gif" title="Instagram"></a>
+            <a id="support_facebook" style="display:none;" href="#" class="support-fb ui-link"><img src="/assets/images/transparent.gif" title="Facebook"></a>
+        </div>
+        <div class="support-info">
+            <div id="supportDetail_email" class="support-detail">
+                <a id="emailContent" class="ui-link">dgdg</a>
+            </div>
+            <div id="supportDetail_whatsapp" class="support-detail">
+                <a id="whatsappContent" class="ui-link">gfygyuhuh</a>
+            </div>
+            <div id="supportDetail_telegram" class="support-detail open">
+                <a id="telegramContent" class="ui-link">abc</a>
+            </div>
+            <div id="supportDetail_skype" class="support-detail">
+                <a id="skypeContent" class="ui-link"></a>
+            </div>
+            <div id="supportDetail_instagram" class="support-detail">
+                <a id="instagramContent" class="ui-link"></a>
+            </div>
+            <div id="supportDetail_facebook" class="support-detail">
+                <a id="facebookContent" class="ui-link"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Power by -->
+    <!-- Browser Support -->
+    <div class="browser-wrap">
+        <img src="/assets/images/transparent.gif"><br>
+        Our website works best in the newest and last prior version of these browsers: <br>Google Chrome. Firefox
+    </div>
+    </div>
+</div>
